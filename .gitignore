@@ -1,0 +1,6 @@
+# project related
+__pycache__
+.venv
+.env
+test.py
+*.DS_Store
