@@ -21,7 +21,7 @@ else:
 
 
 ##### ===== LLM MODEL ===== #####
-model = ChatOpenAI(model="gpt-4o-mini", temperature=0,openai_api_key=openai_api_key )
+model = ChatOpenAI(model="gpt-4o-mini", temperature=0,openai_api_key=openai_api_key)
 
 ##### ===== DEFINE TOOLS ===== #####
 # we'd use two tools: a search engine tool (using DuckDuckGo)and then a retriever over local index (chroma_db)

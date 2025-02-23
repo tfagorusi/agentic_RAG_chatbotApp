@@ -15,4 +15,5 @@ streamlit
 chromadb
 
 
-pysqlite3-binary
+# requirement for streamlit cloud deployement
+pysqlite3-binary # comment this line out when running on your local machine
