@@ -8,6 +8,7 @@ This an agentic retrieval-augment generation (RAG) chatbot. It uses a retriever 
 
 
 ## Look and Feel
+Streamlit App: [agentic-rag-chatbot-app](https://agentic-rag-chatbot-app.streamlit.app)
 
 ![RAG chatbot app](tmp/app_ftrontend.png)
 
