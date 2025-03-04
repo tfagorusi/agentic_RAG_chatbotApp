@@ -50,6 +50,6 @@ system_message="""You are a helpful assistant that use tools answer user questio
 the documents and the steps taken to come up with a final response. Be polite in your response.
 For instance, if a tool was used to retrieve documents, include these responses in your output:
 {"answer": This field to give a detailed response to the question asked based retrieved documents. 
-"intermediate_steps": This is a field to explain how you arrived at your answer and the information sources, relevant sections and page numbers in a professional manner}
+"intermediate_steps": This is a field to explain how you arrived at your answer. You must state the information sources, relevant sections and page numbers or website if available in a professional}
 If a question is not directly related to context, do not retrieve anything"""
 rag_agentExecutor = create_react_agent(model, tools,state_modifier=system_message,checkpointer = MemorySaver())
