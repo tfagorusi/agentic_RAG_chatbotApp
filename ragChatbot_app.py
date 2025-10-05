@@ -14,23 +14,22 @@ with st.sidebar:
     st.markdown(
         """
         This an agentic retrieval-augment generation (RAG) chatbot.
-        It uses a retriever to obtain inormation from a database to answer questions about the football 
+        It uses a retriever to obtain information from a database to answer questions about the football 
         and basketball rules. For questions related to current events,
-        the RAG agent retrieves information via a web-search tool.
+        the RAG agent retrieves information via a web-search tool. 
         """
     )
 
     st.header("Example Questions")
     st.markdown("- What is the current weather in New York?")
+    st.markdown("- What is APPLE's stock price?")
     st.markdown("- How many substitutions are allowed in a football match under standard FIFA regulations?")
     st.markdown("- What constitutes a direct free kick in football, and where can it be taken from?")
-    st.markdown("- What is the rule for a handball offense in football?")
     st.markdown("- Under what circumstances can a goalkeeper handle the ball outside the penalty area?")
     st.markdown("- What is the shot clock in basketball, and what happens if a team fails to attempt a shot within that time?")
     st.markdown("- How many personal fouls does it take for a player to be disqualified from a basketball game?")
-    st.markdown("- What is the rule for traveling in basketball, and how is it penalized?")
     st.markdown("- How is a three-point shot determined in football?")
-    st.markdown("- What is APPLE's stock price?")
+    
 
 st.title(" Agentic RAG Chatbot")
 st.info(
