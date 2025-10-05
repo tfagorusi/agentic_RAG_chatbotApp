@@ -10,10 +10,10 @@ python-dotenv
 numpy
 pypdf
 cryptography
-duckduckgo_search
+ddgs #duckduckgo_search
 streamlit
 chromadb
 
 
 # requirement for streamlit cloud deployement
-pysqlite3-binary # comment this line out when running on your local machine
+#pysqlite3-binary # comment this line out when running on your local machine
