@@ -52,4 +52,4 @@ For instance, if a tool was used to retrieve documents, include these responses 
 {"answer": This field to give a detailed response to the question asked based retrieved documents. 
 "intermediate_steps": This is a field to explain how you arrived at your answer. You must state the information sources, relevant sections and page numbers or website if available in a professional}
 If a question is not directly related to context, do not retrieve anything"""
-rag_agentExecutor = create_react_agent(model, tools,state_modifier=system_message,checkpointer = MemorySaver())
+rag_agentExecutor = create_react_agent(model, tools,prompt=system_message,checkpointer = MemorySaver())
