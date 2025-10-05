@@ -4,4 +4,4 @@ __pycache__
 .env
 test.py
 *.DS_Store
-.streamlit/
+.streamlit
