@@ -5,7 +5,7 @@ from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
 from langgraph.checkpoint.memory import MemorySaver
 from langchain_community.tools import DuckDuckGoSearchResults
-from langchain.tools.retriever import create_retriever_tool
+from langchain.tools import Tool
 from src.retriever import retriever
 
 
@@ -29,19 +29,18 @@ search_tool = DuckDuckGoSearchResults(
     description="""Useful for when you need to answer questions about current and/or latest events and news.
     Retrieve only relavant information. Input should be a search query.""") # DuckDuckGo search tool
 
-retriever_tool = create_retriever_tool(
-    retriever = retriever,
-    name = "Rulebook",
-    description = """Useful only when you need to answer questions on football and basketball game rules.
-        For any questions related to football and basketball, you must use this tool!
-        Don't make up any information that's not from the question and context.
-        Stay within your domain football and basketball in all responses. 
-        Use the entire prompt as input to the tool. For instance, if the prompt is
-        "What is the rule for a handball offense in football?", the input should be
-        "What is the rule for a handball offense in football?".
-        Be polite in your response. If you don't know an answer, say you don't know.
-        """
+retriever_tool = Tool(
+    name="Rulebook",
+    func=retriever.invoke,   # IMPORTANT
+    description="""Useful only when you need to answer questions on football and basketball game rules.
+    For any questions related to football and basketball, you must use this tool!
+    Don't make up any information that's not from the question and context.
+    Stay within your domain football and basketball in all responses.
+    Use the entire prompt as input to the tool.
+    Be polite in your response. If you don't know an answer, say you don't know.
+    """
 )
+
 
 tools = [search_tool, retriever_tool]
 
