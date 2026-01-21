@@ -5,7 +5,7 @@ from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
 from langgraph.checkpoint.memory import MemorySaver
 from langchain_community.tools import DuckDuckGoSearchResults
-from langchain.tools import Tool
+from langchain_core.tools import StructuredTool
 from src.retriever import retriever
 
 
@@ -29,9 +29,9 @@ search_tool = DuckDuckGoSearchResults(
     description="""Useful for when you need to answer questions about current and/or latest events and news.
     Retrieve only relavant information. Input should be a search query.""") # DuckDuckGo search tool
 
-retriever_tool = Tool(
+retriever_tool = StructuredTool.from_function(
+    func=retriever.invoke,
     name="Rulebook",
-    func=retriever.invoke,   # IMPORTANT
     description="""Useful only when you need to answer questions on football and basketball game rules.
     For any questions related to football and basketball, you must use this tool!
     Don't make up any information that's not from the question and context.
