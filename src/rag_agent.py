@@ -27,7 +27,7 @@ model = ChatOpenAI(model="gpt-4o-mini", temperature=0,openai_api_key=openai_api_
 # we'd use two tools: a search engine tool (using DuckDuckGo)and then a retriever over local index (chroma_db)
 search_tool = DuckDuckGoSearchResults(
     description="""Useful for when you need to answer questions about current and/or latest events and news.
-    Retrieve only relavant information. Input should be a search query.""") # DuckDuckGo search tool
+    Retrieve only relavant information. Get the most up-to-date information Input should be a search query.""") # DuckDuckGo search tool
 
 retriever_tool = StructuredTool.from_function(
     func=retriever.invoke,
